@@ -1,8 +1,9 @@
 setuptools~=65.5.1
-pandas=2.1.0
+pandas==2.1.0
 websocket-client~=0.57.0
 requests~=2.31.0
 streamlit~=1.26.0
 plotly~=5.16.1
 python-dateutil~=2.8.2
 altair~=5.1.1
+pip ~= 23.2.1
