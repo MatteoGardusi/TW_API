@@ -1,0 +1,44 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="7">
+            <item index="0" class="java.lang.String" itemvalue="pip" />
+            <item index="1" class="java.lang.String" itemvalue="wheel" />
+            <item index="2" class="java.lang.String" itemvalue="setuptools" />
+            <item index="3" class="java.lang.String" itemvalue="pandas" />
+            <item index="4" class="java.lang.String" itemvalue="streamlit" />
+            <item index="5" class="java.lang.String" itemvalue="numpy" />
+            <item index="6" class="java.lang.String" itemvalue="altair" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N806" />
+          <option value="N813" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="int.__getitem__" />
+          <option value="int.astype" />
+          <option value="year" />
+          <option value="strMonth" />
+          <option value="taxiTripFileName" />
+          <option value="src.Field.Field.__setitem__" />
+          <option value="id_mittente" />
+          <option value="Nodo.get_socket_send.sendto" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
