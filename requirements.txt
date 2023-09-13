@@ -1,4 +1,10 @@
-setuptools~=49.2.0
-pandas~=1.0.5
+setuptools~=65.5.1
+pandas~=2.1.0
 websocket-client~=0.57.0
-requests
+requests~=2.31.0
+streamlit~=1.26.0
+plotly~=5.16.1
+tvdatafeed~=2.1.0
+python-dateutil~=2.8.2
+mplfinance~=0.12.10b0
+altair~=5.1.1
