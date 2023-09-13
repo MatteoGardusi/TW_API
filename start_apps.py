@@ -15,4 +15,6 @@ scripts = ["main.py", "app.py"]
 
 # Usa ThreadPoolExecutor per eseguire gli script contemporaneamente
 with concurrent.futures.ThreadPoolExecutor() as executor:
+    # installo la wheel di talib
+    os.system("pip install TA-Lib-0.4.19-cp39-cp39-win_amd64.whl")
     executor.map(run_script, scripts)
