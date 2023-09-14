@@ -98,7 +98,7 @@ def esegui_calcoli():
             return color
 
         # Applica la formattazione alle celle
-        styled_df = df.style.map(highlight_cells)
+        styled_df = df.style.applymap(highlight_cells)
         # nascondo gli indici delle righe e delle colonne
 
         # Visualizza il DataFrame con le celle colorate
