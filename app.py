@@ -21,8 +21,7 @@ def esegui_calcoli():
 
     def plot(symbol, tf):
         df = pd.read_csv(f'data/{symbol}/{tf}/{symbol}_{tf}.csv', parse_dates=True)
-        df = df.dropna(subset=['RSI'])
-        df.reset_index(drop=True, inplace=True)
+
         df.datetime = pd.to_datetime(df.datetime)
         # Crea il grafico candlestick
         # Crea il grafico dell'RSI con Plotly
