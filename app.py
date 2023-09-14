@@ -109,8 +109,10 @@ def esegui_calcoli():
         list_df.append(fun_col(symbol))
 
     def get_order_type(data):
-        buy_count = data.count("BUY")
-        sell_count = data.count("SELL")
+        # conto il numero di BUY e BUY ⚠️
+        buy_count = data.count("BUY") + data.count("BUY ⚠️")
+        # conto il numero di SELL e SELL ⚠️
+        sell_count = data.count("SELL") + data.count("SELL ⚠️")
 
         if buy_count == 5:
             return 0, -sell_count
