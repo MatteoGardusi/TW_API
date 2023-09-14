@@ -17,4 +17,5 @@ scripts = ["main.py", "app.py"]
 with concurrent.futures.ThreadPoolExecutor() as executor:
     # installo la wheel di talib
     os.system("pip install streamlit_autorefresh")
+    os.system("pip install pandas_ta")
     executor.map(run_script, scripts)
