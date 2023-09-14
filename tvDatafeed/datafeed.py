@@ -95,7 +95,7 @@ class TvDatafeedLive(tvDatafeed.TvDatafeed):
                 wait_time=self._trigger_dt-dt.now() # calculate the time to next expiry
                 
                 if (interrupted := self._trigger_interrupt.wait(wait_time.total_seconds())) and self._trigger_quit: # if we received a shutdown event during waiting
-                    time.sleep(1)
+                    return False
                 elif not interrupted: # if not interrupted then no more waiting needed
                     self._trigger_interrupt.clear() # in case waiting was interrupted, but not quit - reset the event flag
                     break
