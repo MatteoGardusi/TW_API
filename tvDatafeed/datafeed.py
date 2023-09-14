@@ -86,19 +86,6 @@ class TvDatafeedLive(tvDatafeed.TvDatafeed):
             # Wait until next interval(s) expire
             # returns true after waiting, even if interrupted. Returns False only
             # when interrupted for shutdown
-            if not self._trigger_quit: # if not quitting then we can clear interrupt before sarting the wait
-                self._trigger_interrupt.clear() # in case it was set by adding/removing new Seis
-            
-            self._trigger_dt=self._next_trigger_dt() # get new expiry datetime
-            
-            while True: # might need to restart waiting if trigger_dt changes and interrupted when waiting
-                wait_time=self._trigger_dt-dt.now() # calculate the time to next expiry
-                
-                if (interrupted := self._trigger_interrupt.wait(wait_time.total_seconds())) and self._trigger_quit: # if we received a shutdown event during waiting
-                    return True
-                elif not interrupted: # if not interrupted then no more waiting needed
-                    self._trigger_interrupt.clear() # in case waiting was interrupted, but not quit - reset the event flag
-                    break
 
             return True
             
