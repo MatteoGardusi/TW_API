@@ -1,5 +1,5 @@
 
-# Use a base image that includes Python (you can specify the desired version)
+# Use a base image that includes Python (you can specify desired the version)
 FROM python:3.11
 
 # Create a working directory inside the container
@@ -29,6 +29,11 @@ RUN pip install -r requirements.txt
 # Use the Python interpreter to run the app.py script
 CMD ["python", "app.py"]
 
+# Expose a TCP port for the container
+# Add the EXPOSE instruction to specify the port to be exposed
+EXPOSE 8000
 
 # Define the entry point for the container
+# Remove the second CMD instruction, as it conflicts with the previous CMD instruction
+# Keep only one CMD instruction to define the entry point for the container
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
