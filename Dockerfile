@@ -29,5 +29,6 @@ RUN pip install -r requirements.txt
 # Use the Python interpreter to run the app.py script
 CMD ["python", "app.py"]
 
-# Expose the TCP port
-EXPOSE 8050
+
+# Define the entry point for the container
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
