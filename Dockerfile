@@ -1,4 +1,5 @@
-# Usa un'immagine di base che include Python (puoi specificare la versione desiderata)
+
+# Usa' unimmagine di base che include Python (puoi specificare la versione desiderata)
 FROM python:3.11
 
 # Crea una directory di lavoro all'interno del contenitore
@@ -20,3 +21,6 @@ RUN pip install -r requirements.txt
 
 # Specifica il comando per eseguire il tuo script all'interno dell'ambiente virtuale quando il contenitore viene avviato
 CMD ["python", "app.py"]
+
+# Esponi la porta TCP
+EXPOSE 8000
