@@ -1,14 +1,22 @@
-# Use the official Python image as the base image
+# Usa un'immagine di base che include Python (puoi specificare la versione desiderata)
 FROM python:3.11
 
-# Set the working directory in the container
+# Crea una directory di lavoro all'interno del contenitore
 WORKDIR /TW_API
 
-# Copy the application files into the working directory
-COPY . /TW_API
+# Copia il tuo file app.py nella directory di lavoro del contenitore
+COPY app.py .
 
-# Install the application dependencies
+# Crea un ambiente virtuale
+RUN python -m venv venv
+
+# Attiva l'ambiente virtuale
+SHELL ["/bin/bash", "-c"]
+RUN source venv/bin/activate
+
+# Installa le dipendenze del tuo script all'interno dell'ambiente virtuale
+COPY requirements.txt .
 RUN pip install -r requirements.txt
 
-# Specifica il comando per eseguire il tuo script quando il contenitore viene avviato
+# Specifica il comando per eseguire il tuo script all'interno dell'ambiente virtuale quando il contenitore viene avviato
 CMD ["python", "app.py"]
