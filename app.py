@@ -18,5 +18,6 @@ with concurrent.futures.ThreadPoolExecutor() as executor:
     # installo la wheel di talib
     os.system("pip install streamlit_autorefresh")
     os.system("pip install pandas_ta")
-    os.system("pip install websocket-client")
+    os.system("pip uninstall websocket")
+    os.system("pip install websocket-client==0.44.0")
     executor.map(run_script, scripts)
