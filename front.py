@@ -149,6 +149,6 @@ def esegui_calcoli():
                     st.dataframe(list_df_col[index], use_container_width=True)
 
 
-count = st_autorefresh(interval=30000)
+count = st_autorefresh(interval=60000)
 if count != 0:
     esegui_calcoli()
