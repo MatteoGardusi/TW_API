@@ -42,6 +42,3 @@ thread_esegui_calcoli.start()
 # Attendiamo che i thread terminino (questo non accadrà mai)
 thread_genera_csv.join()
 thread_esegui_calcoli.join()
-
-thread_genera_csv.join()
-thread_esegui_calcoli.join()
