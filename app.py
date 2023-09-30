@@ -1,5 +1,4 @@
 import os
-import threading, back
 
 
 # Funzione per eseguire uno script
@@ -27,7 +26,7 @@ symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD',
 
 timeframes = ['15M', '30M', '1H', '4H', '1D']
 
-
+import threading, back
 def loop_genera_csv():
     while True:
         for timeframe in timeframes:
