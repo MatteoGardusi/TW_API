@@ -16,7 +16,13 @@ def esegui_calcoli():
     df = pd.read_csv(f'data/EURUSD/15M/EURUSD_15M.csv', parse_dates=True)
 
     last_update = df['datetime'].iloc[-1]
-    st.write(f"Last Update: {last_update}")
+    st.write(f"Last Trading data Update: {last_update}")
+    # importiamo l'rario attuale
+    from datetime import datetime
+    orario = datetime.now()
+    # stampiamo l'orario attuale
+    st.write(f"Last data refresh: {orario.hour + 2:02d}:{orario.minute:02d}:{orario.second:02d}")
+
 
     def plot(symbol, tf):
         df = pd.read_csv(f'data/{symbol}/{tf}/{symbol}_{tf}.csv', parse_dates=True)
