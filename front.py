@@ -10,6 +10,7 @@ st.subheader("RSI Strategy by Teo")
 symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD', 'EURGBP', 'EURJPY', 'EURCHF', 'EURAUD',
            'AUDCAD', 'AUDJPY', 'AUDNZD', 'CADJPY', 'NZDCAD', 'NZDCHF', 'NZDJPY', 'CHFJPY', 'CADCHF',
            'EURCAD', 'AUDCHF', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPNZD', 'GBPJPY', 'EURNZD', ]
+symbols.sort()
 
 
 def esegui_calcoli():
@@ -21,7 +22,7 @@ def esegui_calcoli():
     from datetime import datetime
     orario = datetime.now()
     # stampiamo l'orario attuale
-    st.write(f"Last data refresh: {orario.hour + 2:02d}:{orario.minute:02d}:{orario.second:02d}")
+    st.write(f"Last data refresh: {orario.hour:02d}:{orario.minute:02d}:{orario.second:02d}")
 
 
     def plot(symbol, tf):
