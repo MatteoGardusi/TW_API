@@ -40,13 +40,13 @@ def loop_esegui_calcoli():
 
 
 # Creiamo due thread separati per eseguire le funzioni in parallelo
-thread_genera_csv = threading.Thread(target=loop_genera_csv)
 thread_esegui_calcoli = threading.Thread(target=loop_esegui_calcoli)
+thread_genera_csv = threading.Thread(target=loop_genera_csv)
 
 # Avviamo i thread
-thread_genera_csv.start()
 thread_esegui_calcoli.start()
+thread_genera_csv.start()
 
 # Attendiamo che i thread terminino (questo non accadrà mai)
-thread_genera_csv.join()
 thread_esegui_calcoli.join()
+thread_genera_csv.join()
