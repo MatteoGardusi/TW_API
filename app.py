@@ -43,7 +43,5 @@ thread_esegui_calcoli.start()
 thread_genera_csv.join()
 thread_esegui_calcoli.join()
 
-os.system(f"streamlit run front.py --browser.gatherUsageStats False")
-
 thread_genera_csv.join()
 thread_esegui_calcoli.join()
