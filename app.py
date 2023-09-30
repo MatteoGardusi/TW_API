@@ -11,10 +11,10 @@ def run_script(script_name):
 
 # Nomi degli script da eseguire
 scripts = ["back.py", "front.py"]
-
+os.system("pip install pandas_ta")
 os.system("python.exe -m pip install --upgrade pip")
 os.system("pip install streamlit_autorefresh")
-os.system("pip install pandas-ta")
+os.system("pip install pandas_ta")
 os.system("pip uninstall websocket")
 os.system("pip install websocket-client==0.44.0")
 # installiamo i requirements.txt
