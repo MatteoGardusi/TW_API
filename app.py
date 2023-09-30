@@ -1,16 +1,5 @@
 import os
 
-
-# Funzione per eseguire uno script
-def run_script(script_name):
-    if script_name == "back.py":
-        os.system(f"python {script_name}")
-    elif script_name == "front.py":
-        os.system(f"streamlit run {script_name}")
-
-
-# Nomi degli script da eseguire
-scripts = ["back.py", "front.py"]
 os.system("pip install pandas_ta")
 os.system("python.exe -m pip install --upgrade pip")
 os.system("pip install streamlit_autorefresh")
@@ -26,4 +15,4 @@ symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD',
 
 timeframes = ['15M', '30M', '1H', '4H', '1D']
 
-os.system(f"streamlit run front.py --server.gatherUsageStats False")
+os.system(f"streamlit run front.py --browser.gatherUsageStats False")
