@@ -26,4 +26,21 @@ symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD',
 
 timeframes = ['15M', '30M', '1H', '4H', '1D']
 
-os.system(f"streamlit run front.py")
+import threading, back
+
+
+def loop_genera_csv():
+    while True:
+        for timeframe in timeframes:
+            for symbol in symbols:
+                print(f"Aggiorno {symbol} {timeframe}")
+                back.genera_csv(symbol, timeframe)
+
+
+thread_genera_csv = threading.Thread(target=loop_genera_csv)
+
+thread_genera_csv.start()
+
+os.system(f"streamlit run front.py --server.gatherUsageStats False")
+
+thread_genera_csv.join()
