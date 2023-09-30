@@ -49,10 +49,11 @@ def genera_csv(symbol, timeframe):
 
     df.to_csv(f"data/{symbol}/{timeframe}/{symbol}_{timeframe}.csv", index=False)
 
-
+'''
 while True:
 
     for timeframe in timeframes:
         for symbol in symbols:
             print(f"Aggiorno {symbol} {timeframe}")
             genera_csv(symbol, timeframe)
+'''

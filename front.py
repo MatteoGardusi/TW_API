@@ -1,7 +1,6 @@
 import pandas as pd
 import streamlit as st
 from streamlit_autorefresh import st_autorefresh
-import time
 import plotly.graph_objects as go
 
 st.set_page_config(page_title="RSI Strategy by Teo", page_icon="📊", layout="wide")
