@@ -28,7 +28,7 @@ def loop_genera_csv():
 
 
 def loop_esegui_calcoli():
-    os.system(f"streamlit run front.py")
+    os.system(f"streamlit run front.py --browser.gatherUsageStats False")
 
 
 # Creiamo due thread separati per eseguire le funzioni in parallelo
