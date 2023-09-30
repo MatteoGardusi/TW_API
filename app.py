@@ -30,6 +30,6 @@ thread_genera_csv = threading.Thread(target=loop_genera_csv)
 
 thread_genera_csv.start()
 
-os.system(f"streamlit run front.py --browser.gatherUsageStats False --no-warn-script-location")
+os.system(f"streamlit run front.py --browser.gatherUsageStats False")
 
 thread_genera_csv.join()
