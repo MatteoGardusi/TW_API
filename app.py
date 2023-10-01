@@ -1,6 +1,7 @@
 import os
 import threading, back
 
+os.system("python.exe -m pip install --upgrade pip")
 os.system("pip install pandas_ta")
 os.system("python.exe -m pip install --upgrade pip")
 os.system("pip install streamlit_autorefresh")
