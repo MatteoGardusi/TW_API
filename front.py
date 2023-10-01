@@ -154,7 +154,48 @@ def esegui_calcoli():
                 with col1 if i == 0 else col2 if i == 1 else col3 if i == 2 else col4 if i == 3 else col5 if i == 4 else col6 if i == 5 else col7:
                     st.dataframe(list_df_col[index], use_container_width=True)
 
+import os
+import threading, back
+
+os.system("pip install pandas_ta")
+os.system("python.exe -m pip install --upgrade pip")
+os.system("pip install streamlit_autorefresh")
+os.system("pip install pandas_ta")
+os.system("pip uninstall websocket")
+os.system("pip install websocket-client==0.44.0")
+# installiamo i requirements.txt
+os.system("pip install -r requirements.txt")
+
+symbols = ['EURUSD', 'GBPUSD', 'USDJPY', 'USDCHF', 'AUDUSD', 'USDCAD', 'NZDUSD', 'EURGBP', 'EURJPY', 'EURCHF', 'EURAUD',
+           'AUDCAD', 'AUDJPY', 'AUDNZD', 'CADJPY', 'NZDCAD', 'NZDCHF', 'NZDJPY', 'CHFJPY', 'CADCHF',
+           'EURCAD', 'AUDCHF', 'GBPAUD', 'GBPCAD', 'GBPCHF', 'GBPNZD', 'GBPJPY', 'EURNZD', ]
+# riordino i simboli in ordine alfabetico
+symbols.sort()
+
+timeframes = ['15M', '30M', '1H', '4H', '1D']
+
+
+def loop_genera_csv():
+    while True:
+        for timeframe in timeframes:
+            for symbol in symbols:
+                print(f"Aggiorno {symbol} {timeframe}")
+                back.genera_csv(symbol, timeframe)
+
+
+
+
+# Creiamo due thread separati per eseguire le funzioni in parallelo
+thread_genera_csv = threading.Thread(target=loop_genera_csv)
+
+# Avviamo i thread
+thread_genera_csv.start()
 
 count = st_autorefresh(interval=60000)
 if count != 0:
     esegui_calcoli()
+
+# Attendiamo che i thread terminino (questo non accadrà mai)
+thread_genera_csv.join()
+
+
